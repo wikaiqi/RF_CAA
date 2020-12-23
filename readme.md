@@ -1,4 +1,6 @@
-# Conditional Adversarial Architecture -- Tensorflow 2.0 version
+# Conditional Adversarial Architecture 
+### Tensorflow 2.0 version by Weikai Qi
+
 
 ## Part 1: Binary classification using a CNN model
 
