@@ -41,7 +41,7 @@ The performance of the CNN model (averaged by 5 runs):
 | validation | 79.8% (1.6%) |
 |test | 79.7% (3.2%) | 
 
- The accuracy of the training set is much higher than the validation set and the test set, which is the model is overfitting. Including more data through data augmentation or reducing the size of the model can potentially improve performance. However, overfitting is also potentially relating to the noise in data. Since the raw data is collected from two subjects in different environments. The background noise might mistakenly be recognized as patterns by a CNN model. Remove those subject-dependent noises in the data will help us to build a better subject-independent solution. 
+ The accuracy of the training set is much higher than the validation set and the test set, which indicates the model is overfitting. Including more data through data augmentation or reducing the size of the model can potentially improve performance. However, overfitting is also potentially relating to the noise in data. Since the raw data is collected from two subjects in different environments. The background noise might mistakenly be recognized as patterns by a CNN model. Remove those subject-dependent noises in the data will help us to build a better subject-independent solution. 
 
 
 ## Part 2: Three-Way Game
