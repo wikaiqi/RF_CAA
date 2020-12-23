@@ -6,7 +6,7 @@
 
 ![Figure 1](./pictures/spectrogram.png)
 
-I have converted every raw sensor recording into a two-dimensional spectrogram. To avoid regenerate the 2d representations of original data every time, I intrduce the parameter `recalculate`.  By setting 'recalculate = False', the code will only generate 2d representation files only once. I split the data into train / validation / test datasets with fraction of 80%, 10%, 10% respectively. The following is a table list the number of samples with label=0 (F) and label = 1 (MW) and the number of samples from subjects 1 and 2: 
+In the code, every raw sensor recording is converted to a two-dimensional spectrogram. To avoid regenerate the 2d representations of original data every time, I intrduce the parameter `recalculate`.  By setting 'recalculate = False', the code will only generate 2d representation files only once. I split the data into train / validation / test datasets with fraction of 80%, 10%, 10% respectively. The following is a table list the number of samples with label=0 (F) and label = 1 (MW) and the number of samples from subjects 1 and 2: 
 | datasets | samples with label=0 (F) | samples with label=1 (MW) | subject 1 samples | subject 2 samples |
 |-----------|:-------------------------:|:--------------------------:|:-------------------:|:------------------:|
 | training | 377 | 245 | 420 | 302 |
