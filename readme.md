@@ -22,6 +22,7 @@ Train the CNN model in the command line:
 ```
 python train.py -p data/ --train true
 ```
+By default, it will run 120 epochs. We can change it to other value (for example, 200) by adding `--epochs 200`. 
 
 Load pre-train model and run prediction: 
 ```
@@ -77,6 +78,16 @@ The list of required packages can be found in `requirements/requirements.txt`. T
  conda env create -f environment.yaml
  ```
  It will create a new environment named `CAA`, and then run `coda activate CAA` to activate the new environment.
+
+## Run the code on colab
+You can copy the code and data to google drive and run it on colab. Here is the code you add to a colab notebook and run the prediction:
+```
+from google.colab import drive
+drive.mount('/content/gdrive', force_remount=True)
+%cd /content/gdrive/My Drive/CAA/RFSleep_CAA/
+!python train.py --train true --epochs 120
+```
+We can access to GPU/TPU card with colab pro account. For example, colab assign a 'Tesla P100-PCIE-16GB' if choice 'GPU' in the notebook setting, and it only less than 10 min .  
 
 ##  Parameters
 ```
