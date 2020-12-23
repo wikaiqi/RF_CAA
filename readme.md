@@ -12,6 +12,8 @@ In the code, every raw sensor recording is converted to a two-dimensional spectr
 | training | 377 | 245 | 420 | 302 |
 | validation | 44 | 46 | 51 | 39|
 |test | 47 | 44 | 57 | 34 |
+
+
 The ratio between two classes are 1.5, 0.96, 1.02 for training, valiation, and test, and The ratio between two subjects are 1.39, 1.3, 1.67 for training, valiation, and test. Subject 1 has more data than subject 2. The algorithm may bias to the subject 1, for example,  if use a vanilla CNN model.  
 
 ### Run the CNN model
