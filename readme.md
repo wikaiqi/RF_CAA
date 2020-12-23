@@ -84,14 +84,14 @@ The list of required packages can be found in `requirements/requirements.txt`. T
  It will create a new environment named `CAA`, and then run `coda activate CAA` to activate the new environment.
 
 ## Run the code on Colab
-You can copy the code and data to google drive and run it on colab. Here is the code you add to a colab notebook and run the prediction:
+You can copy the code and data to google drive and run it on colab. Here is an example code you can add in a colab notebook and it will train a cnn model:
 ```
 from google.colab import drive
 drive.mount('/content/gdrive', force_remount=True)
-%cd /content/gdrive/My Drive/CAA/RFSleep_CAA/
+%cd /content/gdrive/My Drive/CAA/RFSleep_CAA/  ## change this path to where you put the data
 !python train.py --train true --epochs 120
 ```
-We can access to GPU/TPU card with Colab pro account. For example, collab assigns a 'Tesla P100-PCIE-16GB' if choice 'GPU' in the notebook setting, and it takes less than 10 min to train the model.  
+We can access to a GPU/TPU card with a Colab PRO account. For example, collab assigns a 'Tesla P100-PCIE-16GB' if I choice 'GPU' in the notebook setting, and it takes less than 10 min to train the model.  
 
 ##  Parameters
 ```
