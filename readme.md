@@ -1,6 +1,6 @@
 # Conditional Adversarial Architecture -- Tensorflow 2.0 version
 
-## Part 1: Binary classification using a CNN
+## Part 1: Binary classification using a CNN model
 
 ![Figure 1](./pictures/spectrogram.png)
 
@@ -14,10 +14,18 @@ I have converted every raw sensor recording into a two-dimensional spectrogram. 
 
  Similar to [Zhao etc.'s paper](http://sleep.csail.mit.edu), I adopt an encoder network is composed of 16 convolutional layers with residual blocks. The size of input data for the network is (224,224, 1). Since there are only several hundred samples, I reduced the number of layers and the number of filters to avoid overfitting. The predictor has two fully connected (FC) networks. 
 
-Train the CNN model in the command line: `python train.py -p data/ --train true`
-Load pre-train model and run prediction: `python train.py --checkpoint "check_point-CNN"`
+### Run the CNN model
 
-The performance of the CNN model (averaged by 10 runs):
+Before start ruuning the code, first step is to copy `file_locator.csv` and `intermediate` folder to the `data` folder in this repo.
+
+Train the CNN model in the command line: 
+```python train.py -p data/ --train true```
+
+Load pre-train model and run prediction: 
+```python train.py --checkpoint "check_point-CNN"```
+
+### Performance of the CNN model
+The performance of the CNN model (averaged by 5 runs):
 | datasets | Accuracy (sd) | 
 |-----------|:-------------------------:|
 | training | 98.2% (3.6%) | 
@@ -31,8 +39,13 @@ The performance of the CNN model (averaged by 10 runs):
 
 Zhao's paper points out that if we use a discriminator, in theory, it will discard extraneous information about the source (in this case is the subject's id) when the three players' game at equilibrium. Each subject's background noise will be removed by the adversarial training process. More details about this three-way game can be in the paper. Since the output of the predictor plays as an underlying posterior, we should avoid the gradient backpropagation from the discriminator to the predictor. 
 
-Train the three-way game model in the command line: `python train.py --train true --game true`
-Load pre-train model and run prediction: `python train.py --checkpoint "check_point-CAA"`
+Train the three-way game model in the command line: 
+```
+python train.py --train true --game true
+```
+
+Load pre-train model and run prediction: 
+```python train.py --checkpoint "check_point-CAA"```
 
 The performance of the three-way game model (averaged by 5 runs): 
 | datasets | Accuracy (sd) | 
@@ -56,4 +69,3 @@ The list of required packages can be found in `requirements/requirements.txt`. T
  - Run `pip install ` to get the package. 
  - if use `conda`, run `conda env create -f environment.yaml` in the command line and it will create a new environment named `CAA`, and then run `coda activate CAA` to activate the new environment.
  
- When run the code, copy `file_locator.csv` and `intermediate` folder to `data` in this repo.
