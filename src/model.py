@@ -186,14 +186,10 @@ def train_model(path, n_epochs, batch_size=32, l2=0.01, game=False,
     test_enc_output = encoder(test_set, training = False)
     feature_map = test_enc_output.numpy()
 
-
+    print('-----------------------END--------------------------------')
 
     return feature_map,test_label, game_loss_list
 
-
-
-    
-    print('-----------------------END--------------------------------')
   
 def predict_model(test_set, test_label, l2=0.01, cp_path='check_point/'):
     encoder = Encoder(l2=l2)
