@@ -9,10 +9,10 @@ from tensorflow.keras import models, layers, Input, Model
 from .resnet import Encoder, Predictor, Discriminator
 from .dataset import read_dataset
 
-seed = 1
-random.seed(seed)
-np.random.seed(seed)
-tf.random.set_seed(seed)
+#seed = 1
+#random.seed(seed)
+#np.random.seed(seed)
+#tf.random.set_seed(seed)
 
 
 def train_model(path, n_epochs, batch_size=32, l2=0.01, game=False,
